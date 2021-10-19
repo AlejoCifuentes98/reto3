@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block contenido %}
+
+<form action="" method="POST">
+    {% csrf_token %} {{ formulario.as_p }}
+    <input type="submit" value="Agregar">
+    <a href="{% url 'mantenimientos' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+
+{% endblock contenido %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block contenido %}
+<h1>Todos los mantenimientos</h1>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Fecha de</th>
+        <th>Descripción</th>
+        <th>Moto</th>
+
+
+    </tr>
+
+    {% for l in lista %}
+    <tr>
+        <td>{{ l.nombre }}</td>
+        <td>{{ l.fecha }}</td>
+        <td>{{ l.descripcion }}</td>
+        <td>{{ l.historial.moto.modelo }}</td>
+        <td>
+            <a href="{% url 'moto_detalles' id_moto=i.id %}"> Ver Detalles </a>
+            <a href="{% url 'moto_editar' id_moto=i.id %}"> Editar </a>
+            <a href="{% url 'moto_eliminar' id_moto=i.id %}"> Eliminar </a>
+
+        </td>
+
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock contenido %}

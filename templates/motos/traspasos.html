@@ -1,0 +1,1 @@
+{% extends 'base.html' %} {% block contenido %} {% for i in lista %} {{i}} <a href="{% url 'traspaso_aceptar' id_historial=i.id %}">Aceptar traspaso</a> {% endfor %} {% endblock contenido %}

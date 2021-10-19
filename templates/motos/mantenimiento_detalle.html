@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block contenido %}
+<h2><span style="color: red;">Marca: </span>{{ object.nombres }}</h2>
+<h3>
+    <span style="color: red;">Modelo: </span>{{ object.fecha}}
+</h3>
+<h3><span style="color: red; ">Cilindraje: </span>{{ object.descripción}}</h3>
+
+{% endif %}{% endblock contenido %}

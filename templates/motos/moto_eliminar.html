@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block contenido %}
+<form action="" method="post">
+
+    {% csrf_token %}
+    <h3>¿ Desea eliminar la moto de placas: <span> <b> {{ moto.moto.placa }} </b></span>?</h3>
+    <div class="card-footer">
+        <div class="row ">
+
+            <div class="col-12">
+                <a href="{% url 'mis_motos' %}" class="btn btn-secondary">Cancel</a>
+                <input type="submit" value="Si, eliminar" class="btn btn-danger  float-right swalDefaultSuccess">
+            </div>
+        </div>
+
+    </div>
+</form>
+
+{% endblock contenido %}

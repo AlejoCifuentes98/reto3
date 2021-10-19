@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block contenido %}
+<h1>Todas tus motos</h1>
+<a href="{% url 'moto_agregar' %}">Agregar moto nueva</a>
+<table>
+    <thead>
+
+        <tr>
+            <th>Moto</th>
+            <th>Propietario</th>
+            <th>Estado</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for i in lista %}
+        <tr>
+            <td>{{ i.moto }}</td>
+            <td>{{ i.propietario }}</td>
+            <td>{{ i.estado }}</td>
+            <td>
+                <a href="{% url 'moto_detalles' id_moto=i.id %}"> Ver Detalles </a>
+                <br><a href="{% url 'moto_editar' id_moto=i.id %}"> Editar </a>
+                <br><a href="{% url 'moto_eliminar' id_moto=i.id %}"> Eliminar </a>
+
+            </td>
+
+
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock contenido %}
